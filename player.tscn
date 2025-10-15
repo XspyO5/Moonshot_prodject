@@ -1,7 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhqjtg0hbxf1w"]
+[gd_scene load_steps=8 format=3 uid="uid://bhqjtg0hbxf1w"]
 
 [ext_resource type="Texture2D" uid="uid://dntrc43xhqxix" path="res://Player_assets/player_MainBody.png" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bvymk0kq7384e" path="res://Player_assets/Player_arm.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://c4tq3q6l7r6s3" path="res://Player_assets/Player_hand.png" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://b88rrtt0ikn3p" path="res://mouse_position.gd" id="4_hqtel"]
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_onrkg"]
+target_nodepath = NodePath("../InverseKinematicTargets/LHandTarg")
+tip_nodepath = NodePath("Chest/LShoulder/LArm/Lhand")
+ccdik_data_chain_length = 3
+joint_data/0/bone_index = 6
+joint_data/0/bone2d_node = NodePath("Chest/LShoulder/LArm/Lhand")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 0.0
+joint_data/0/constraint_angle_max = 0.0
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 5
+joint_data/1/bone2d_node = NodePath("Chest/LShoulder/LArm")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = 329.99997
+joint_data/1/constraint_angle_max = 204.99998
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 4
+joint_data/2/bone2d_node = NodePath("Chest/LShoulder")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = 99.99999
+joint_data/2/constraint_angle_max = 270.0
+joint_data/2/constraint_angle_invert = true
+joint_data/2/constraint_in_localspace = true
+joint_data/2/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_i3pqv"]
+target_nodepath = NodePath("../InverseKinematicTargets/RHandTarg")
+tip_nodepath = NodePath("Chest/RShoulder/RArm/Rhand")
+ccdik_data_chain_length = 3
+joint_data/0/bone_index = 3
+joint_data/0/bone2d_node = NodePath("Chest/RShoulder/RArm/Rhand")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 0.0
+joint_data/0/constraint_angle_max = 0.0
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 2
+joint_data/1/bone2d_node = NodePath("Chest/RShoulder/RArm")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = 30.0
+joint_data/1/constraint_angle_max = 154.99998
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 1
+joint_data/2/bone2d_node = NodePath("Chest/RShoulder")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = 260.0
+joint_data/2/constraint_angle_max = 90.0
+joint_data/2/constraint_angle_invert = true
+joint_data/2/constraint_in_localspace = true
+joint_data/2/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_hqtel"]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource("SkeletonModification2DCCDIK_onrkg")
+modifications/1 = SubResource("SkeletonModification2DCCDIK_i3pqv")
 
 [node name="player" type="Node2D"]
 
@@ -11,35 +83,50 @@
 texture = ExtResource("1_4flbx")
 
 [node name="RArm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(44, -85)
-rotation = -1.571092
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(44, -78)
+rotation = -1.4080966
+scale = Vector2(0.9998455, 0.9998455)
 texture = ExtResource("2_onrkg")
 offset = Vector2(-0.45576477, 32.876614)
 
 [node name="RForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(105, -86)
-rotation = -0.01579492
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(104.11061, -67.45428)
+rotation = -1.4129868
+scale = Vector2(0.999699, 0.999699)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.21077728, 29.462776)
 
+[node name="RHand" type="Sprite2D" parent="BodyParts"]
+position = Vector2(166.15256, -56.56973)
+rotation = 1.728606
+scale = Vector2(1.4993944, 1.4993944)
+texture = ExtResource("3_i3pqv")
+offset = Vector2(-0.77199936, -6.6032944)
+
 [node name="LArm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(-44, -85)
-rotation = -1.5707964
+position = Vector2(-44, -78)
+rotation = 0.17392136
+scale = Vector2(0.9998882, 0.9998882)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.29397583, -27.19541)
 
 [node name="LForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(-99.99595, -86.17937)
-rotation = -0.012213027
+position = Vector2(-34.847015, -133.1973)
+rotation = -1.7284528
+scale = Vector2(0.9997722, 0.9997722)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.08850098, 29.423607)
+
+[node name="LHand" type="Sprite2D" parent="BodyParts"]
+position = Vector2(27.723795, -142.1232)
+rotation = 1.4131399
+scale = Vector2(1.5003909, 1.5003909)
+texture = ExtResource("3_i3pqv")
 
 [node name="Skeletron" type="Node2D" parent="."]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Skeletron"]
-position = Vector2(0, -7)
+modification_stack = SubResource("SkeletonModificationStack2D_hqtel")
 
 [node name="Chest" type="Bone2D" parent="Skeletron/Skeleton2D"]
 position = Vector2(0, -56)
@@ -49,15 +136,18 @@ rest = Transform2D(1, 0, 0, 1, 0, -56)
 position = Vector2(44, -22)
 rotation = 0.00031592185
 rest = Transform2D(0.99999994, 0.00031592185, -0.00031592185, 0.99999994, 44, -22)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/RShoulder"]
 rotation = -1.5714079
 remote_path = NodePath("../../../../../BodyParts/RArm")
 
 [node name="RArm" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/RShoulder"]
-position = Vector2(60.999683, -1.0192719)
-rotation = -0.016110841
+position = Vector2(61.035683, 0.6325226)
+rotation = -1.5762933
+scale = Vector2(0.9998352, 0.9998352)
 rest = Transform2D(0.99987024, -0.016110145, 0.016110145, 0.99987024, 60.999683, -1.0192719)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/RShoulder/RArm"]
 position = Vector2(-1.4305115e-06, 1.6987324e-06)
@@ -69,21 +159,30 @@ rest = Transform2D(1, 0, 0, 1, -1, 63)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 90.0
+metadata/_local_pose_override_enabled_ = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/RShoulder/RArm/Rhand"]
+position = Vector2(-1.4305115e-06, 1.6987324e-06)
+rotation = 3.1415927
+scale = Vector2(1.5, 1.5)
+remote_path = NodePath("../../../../../../../BodyParts/RHand")
 
 [node name="LShoulder" type="Bone2D" parent="Skeletron/Skeleton2D/Chest"]
 position = Vector2(-44, -22)
 rotation = 0.025010388
 rest = Transform2D(0.99968725, 0.02500778, -0.02500778, 0.99968725, -44, -22)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/LShoulder"]
 rotation = -1.5714079
 remote_path = NodePath("../../../../../BodyParts/LArm")
 
 [node name="LArm" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/LShoulder"]
-position = Vector2(-56.0075, 0.4007472)
-rotation = -0.037223414
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(-56.010292, 0.39985657)
+rotation = 1.5477455
+scale = Vector2(0.9998796, 0.9998796)
 rest = Transform2D(0.9993073, -0.03721482, 0.03721482, 0.9993073, -56.0075, 0.4007472)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/LShoulder/LArm"]
 position = Vector2(0.0062426813, -0.17930342)
@@ -96,5 +195,21 @@ rest = Transform2D(0.9999819, 0.006020588, -0.006020588, 0.9999819, -1, 63)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 90.0
+metadata/_local_pose_override_enabled_ = true
 
-[node name="InverseKinematic" type="Node2D" parent="Skeletron"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/LShoulder/LArm/Lhand"]
+position = Vector2(-1.4305115e-06, 1.6987324e-06)
+rotation = 3.1415927
+scale = Vector2(1.5, 1.5)
+remote_path = NodePath("../../../../../../../BodyParts/LHand")
+
+[node name="InverseKinematicTargets" type="Node2D" parent="Skeletron"]
+
+[node name="RHandTarg" type="Node2D" parent="Skeletron/InverseKinematicTargets"]
+position = Vector2(215, -48)
+
+[node name="LHandTarg" type="Node2D" parent="Skeletron/InverseKinematicTargets"]
+position = Vector2(160, -161)
+
+[node name="MousePosition" type="Node2D" parent="."]
+script = ExtResource("4_hqtel")
