@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhqjtg0hbxf1w"]
+
+[ext_resource type="Texture2D" uid="uid://dntrc43xhqxix" path="res://Player_assets/player_MainBody.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://bvymk0kq7384e" path="res://Player_assets/Player_arm.png" id="2_onrkg"]
+
+[node name="player" type="Node2D"]
+
+[node name="BodyParts" type="Node2D" parent="."]
+
+[node name="PlayerMainBody" type="Sprite2D" parent="BodyParts"]
+texture = ExtResource("1_4flbx")
+
+[node name="RArm" type="Sprite2D" parent="BodyParts"]
+position = Vector2(44, -85)
+rotation = -1.571092
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_onrkg")
+offset = Vector2(-0.45576477, 32.876614)
+
+[node name="RForearm" type="Sprite2D" parent="BodyParts"]
+position = Vector2(105, -86)
+rotation = -0.01579492
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_onrkg")
+offset = Vector2(0.21077728, 29.462776)
+
+[node name="LArm" type="Sprite2D" parent="BodyParts"]
+position = Vector2(-44, -85)
+rotation = -1.5707964
+texture = ExtResource("2_onrkg")
+offset = Vector2(0.29397583, -27.19541)
+
+[node name="LForearm" type="Sprite2D" parent="BodyParts"]
+position = Vector2(-99.99595, -86.17937)
+rotation = -0.012213027
+texture = ExtResource("2_onrkg")
+offset = Vector2(0.08850098, 29.423607)
+
+[node name="Skeletron" type="Node2D" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Skeletron"]
+position = Vector2(0, -7)
+
+[node name="Chest" type="Bone2D" parent="Skeletron/Skeleton2D"]
+position = Vector2(0, -56)
+rest = Transform2D(1, 0, 0, 1, 0, -56)
+
+[node name="RShoulder" type="Bone2D" parent="Skeletron/Skeleton2D/Chest"]
+position = Vector2(44, -22)
+rotation = 0.00031592185
+rest = Transform2D(0.99999994, 0.00031592185, -0.00031592185, 0.99999994, 44, -22)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/RShoulder"]
+rotation = -1.5714079
+remote_path = NodePath("../../../../../BodyParts/RArm")
+
+[node name="RArm" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/RShoulder"]
+position = Vector2(60.999683, -1.0192719)
+rotation = -0.016110841
+rest = Transform2D(0.99987024, -0.016110145, 0.016110145, 0.99987024, 60.999683, -1.0192719)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/RShoulder/RArm"]
+position = Vector2(-1.4305115e-06, 1.6987324e-06)
+remote_path = NodePath("../../../../../../BodyParts/RForearm")
+
+[node name="Rhand" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/RShoulder/RArm"]
+position = Vector2(-1, 63)
+rest = Transform2D(1, 0, 0, 1, -1, 63)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 90.0
+
+[node name="LShoulder" type="Bone2D" parent="Skeletron/Skeleton2D/Chest"]
+position = Vector2(-44, -22)
+rotation = 0.025010388
+rest = Transform2D(0.99968725, 0.02500778, -0.02500778, 0.99968725, -44, -22)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/LShoulder"]
+rotation = -1.5714079
+remote_path = NodePath("../../../../../BodyParts/LArm")
+
+[node name="LArm" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/LShoulder"]
+position = Vector2(-56.0075, 0.4007472)
+rotation = -0.037223414
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(0.9993073, -0.03721482, 0.03721482, 0.9993073, -56.0075, 0.4007472)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeletron/Skeleton2D/Chest/LShoulder/LArm"]
+position = Vector2(0.0062426813, -0.17930342)
+remote_path = NodePath("../../../../../../BodyParts/LForearm")
+
+[node name="Lhand" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/LShoulder/LArm"]
+position = Vector2(-1, 63)
+rotation = 0.006020624
+rest = Transform2D(0.9999819, 0.006020588, -0.006020588, 0.9999819, -1, 63)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 90.0
+
+[node name="InverseKinematic" type="Node2D" parent="Skeletron"]
