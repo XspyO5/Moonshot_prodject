@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dntrc43xhqxix" path="res://Player_assets/player_MainBody.png" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bvymk0kq7384e" path="res://Player_assets/Player_arm.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c4tq3q6l7r6s3" path="res://Player_assets/Player_hand.png" id="3_i3pqv"]
-[ext_resource type="Script" uid="uid://b88rrtt0ikn3p" path="res://mouse_position.gd" id="4_hqtel"]
+[ext_resource type="Script" uid="uid://djo7hbi8ats7s" path="res://Functions/Player_functions/mouse_position.gd" id="4_hqtel"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_onrkg"]
 target_nodepath = NodePath("../InverseKinematicTargets/LHandTarg")
@@ -22,8 +22,8 @@ joint_data/1/bone_index = 5
 joint_data/1/bone2d_node = NodePath("Chest/LShoulder/LArm")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = 329.99997
-joint_data/1/constraint_angle_max = 204.99998
+joint_data/1/constraint_angle_min = 329.9999
+joint_data/1/constraint_angle_max = 204.99995
 joint_data/1/constraint_angle_invert = true
 joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
@@ -31,7 +31,7 @@ joint_data/2/bone_index = 4
 joint_data/2/bone2d_node = NodePath("Chest/LShoulder")
 joint_data/2/rotate_from_joint = false
 joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = 99.99999
+joint_data/2/constraint_angle_min = 99.999985
 joint_data/2/constraint_angle_max = 270.0
 joint_data/2/constraint_angle_invert = true
 joint_data/2/constraint_in_localspace = true
@@ -55,7 +55,7 @@ joint_data/1/bone2d_node = NodePath("Chest/RShoulder/RArm")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
 joint_data/1/constraint_angle_min = 30.0
-joint_data/1/constraint_angle_max = 154.99998
+joint_data/1/constraint_angle_max = 154.99995
 joint_data/1/constraint_angle_invert = true
 joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
@@ -76,6 +76,13 @@ modifications/0 = SubResource("SkeletonModification2DCCDIK_onrkg")
 modifications/1 = SubResource("SkeletonModification2DCCDIK_i3pqv")
 
 [node name="player" type="Node2D"]
+position = Vector2(561, 351)
+
+[node name="ArmMovemet" type="Node" parent="."]
+script = ExtResource("4_hqtel")
+
+[node name="MousePosition" type="Node2D" parent="ArmMovemet"]
+position = Vector2(317, 353)
 
 [node name="BodyParts" type="Node2D" parent="."]
 
@@ -84,43 +91,43 @@ texture = ExtResource("1_4flbx")
 
 [node name="RArm" type="Sprite2D" parent="BodyParts"]
 position = Vector2(44, -78)
-rotation = -1.4080966
-scale = Vector2(0.9998455, 0.9998455)
+rotation = -1.5578135
+scale = Vector2(0.99998224, 0.99998224)
 texture = ExtResource("2_onrkg")
 offset = Vector2(-0.45576477, 32.876614)
 
 [node name="RForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(104.11061, -67.45428)
-rotation = -1.4129868
-scale = Vector2(0.999699, 0.999699)
+position = Vector2(105.02045, -76.53839)
+rotation = -1.5627204
+scale = Vector2(0.9998297, 0.9998297)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.21077728, 29.462776)
 
 [node name="RHand" type="Sprite2D" parent="BodyParts"]
-position = Vector2(166.15256, -56.56973)
-rotation = 1.728606
-scale = Vector2(1.4993944, 1.4993944)
+position = Vector2(167.99744, -75.03)
+rotation = 1.5788723
+scale = Vector2(1.4992151, 1.4992151)
 texture = ExtResource("3_i3pqv")
 offset = Vector2(-0.77199936, -6.6032944)
 
 [node name="LArm" type="Sprite2D" parent="BodyParts"]
 position = Vector2(-44, -78)
-rotation = 0.17392136
-scale = Vector2(0.9998882, 0.9998882)
+rotation = -1.5455111
+scale = Vector2(0.9999111, 0.9999111)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.29397583, -27.19541)
 
 [node name="LForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(-34.847015, -133.1973)
-rotation = -1.7284528
-scale = Vector2(0.9997722, 0.9997722)
+position = Vector2(-99.784485, -79.04257)
+rotation = 1.5735264
+scale = Vector2(0.9998001, 0.9998001)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.08850098, 29.423607)
 
 [node name="LHand" type="Sprite2D" parent="BodyParts"]
-position = Vector2(27.723795, -142.1232)
-rotation = 1.4131399
-scale = Vector2(1.5003909, 1.5003909)
+position = Vector2(-162.9274, -80.22989)
+rotation = -1.5680661
+scale = Vector2(1.4994264, 1.4994264)
 texture = ExtResource("3_i3pqv")
 
 [node name="Skeletron" type="Node2D" parent="."]
@@ -145,7 +152,7 @@ remote_path = NodePath("../../../../../BodyParts/RArm")
 [node name="RArm" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/RShoulder"]
 position = Vector2(61.035683, 0.6325226)
 rotation = -1.5762933
-scale = Vector2(0.9998352, 0.9998352)
+scale = Vector2(0.9998353, 0.9998353)
 rest = Transform2D(0.99987024, -0.016110145, 0.016110145, 0.99987024, 60.999683, -1.0192719)
 metadata/_local_pose_override_enabled_ = true
 
@@ -206,10 +213,7 @@ remote_path = NodePath("../../../../../../../BodyParts/LHand")
 [node name="InverseKinematicTargets" type="Node2D" parent="Skeletron"]
 
 [node name="RHandTarg" type="Node2D" parent="Skeletron/InverseKinematicTargets"]
-position = Vector2(215, -48)
+position = Vector2(211, -74)
 
 [node name="LHandTarg" type="Node2D" parent="Skeletron/InverseKinematicTargets"]
-position = Vector2(160, -161)
-
-[node name="MousePosition" type="Node2D" parent="."]
-script = ExtResource("4_hqtel")
+position = Vector2(-364, -84)
