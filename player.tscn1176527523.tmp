@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dntrc43xhqxix" path="res://Player_assets/player_MainBody.png" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bvymk0kq7384e" path="res://Player_assets/Player_arm.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c4tq3q6l7r6s3" path="res://Player_assets/Player_hand.png" id="3_i3pqv"]
-[ext_resource type="Script" uid="uid://djo7hbi8ats7s" path="res://Functions/Player_functions/Utilities.gd" id="4_hqtel"]
-[ext_resource type="Script" uid="uid://brqkk5caf6kb7" path="res://Functions/Player_functions/mouse_position.gd" id="5_2hs0m"]
-[ext_resource type="Script" uid="uid://bisx865ehat1e" path="res://Functions/Player_functions/r_hand_targ.gd" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://djo7hbi8ats7s" path="res://Functions/Player_functions/mouse_position.gd" id="4_hqtel"]
+[ext_resource type="Script" uid="uid://brqkk5caf6kb7" path="res://mouse_position.gd" id="5_2hs0m"]
+[ext_resource type="Script" uid="uid://bisx865ehat1e" path="res://r_hand_targ.gd" id="5_sweqy"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_onrkg"]
 target_nodepath = NodePath("../InverseKinematicTargets/LHandTarg")
@@ -87,42 +87,42 @@ texture = ExtResource("1_4flbx")
 
 [node name="RArm" type="Sprite2D" parent="BodyParts"]
 position = Vector2(44, -78)
-rotation = -1.5578284
-scale = Vector2(0.99999714, 0.99999714)
+rotation = -1.5578266
+scale = Vector2(0.99999946, 0.99999946)
 texture = ExtResource("2_onrkg")
 offset = Vector2(-0.45576477, 32.876614)
 
 [node name="RForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(105.033264, -76.538086)
-rotation = -1.5627382
-scale = Vector2(0.9998398, 0.9998398)
+position = Vector2(105.02185, -76.53833)
+rotation = -1.5627197
+scale = Vector2(0.9998355, 0.9998355)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.21077728, 29.462776)
 
 [node name="RHand" type="Sprite2D" parent="BodyParts"]
-position = Vector2(168.00641, -75.029785)
-rotation = 1.5788546
-scale = Vector2(1.4997079, 1.4997079)
+position = Vector2(168.0003, -75.02991)
+rotation = 1.578873
+scale = Vector2(1.4995639, 1.4995639)
 texture = ExtResource("3_i3pqv")
 offset = Vector2(-0.77199936, -6.6032944)
 
 [node name="LArm" type="Sprite2D" parent="BodyParts"]
 position = Vector2(-44, -78)
-rotation = -1.5455697
+rotation = -1.5455695
 scale = Vector2(0.99998677, 0.99998677)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.29397583, -27.19541)
 
 [node name="LForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(-99.822815, -79.043304)
-rotation = 1.5736399
+position = Vector2(-99.822845, -79.043304)
+rotation = 1.57364
 scale = Vector2(0.99987406, 0.99987406)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.08850098, 29.423607)
 
 [node name="LHand" type="Sprite2D" parent="BodyParts"]
-position = Vector2(-162.9921, -80.23111)
-rotation = -1.5679526
+position = Vector2(-162.99213, -80.23114)
+rotation = -1.5679525
 scale = Vector2(1.4998157, 1.4998157)
 texture = ExtResource("3_i3pqv")
 
@@ -148,7 +148,7 @@ remote_path = NodePath("../../../../../BodyParts/RArm")
 [node name="RArm" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/RShoulder"]
 position = Vector2(61.035683, 0.6325226)
 rotation = -1.5762933
-scale = Vector2(0.99983555, 0.99983555)
+scale = Vector2(0.99983543, 0.99983543)
 rest = Transform2D(0.99987024, -0.016110145, 0.016110145, 0.99987024, 60.999683, -1.0192719)
 metadata/_local_pose_override_enabled_ = true
 
