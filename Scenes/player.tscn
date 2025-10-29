@@ -24,9 +24,9 @@ joint_data/1/bone_index = 5
 joint_data/1/bone2d_node = NodePath("Chest/LShoulder/LArm")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = 279.99997
-joint_data/1/constraint_angle_max = 260.0
-joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_angle_min = 74.99999
+joint_data/1/constraint_angle_max = 240.0
+joint_data/1/constraint_angle_invert = false
 joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
 joint_data/2/bone_index = 4
@@ -56,9 +56,9 @@ joint_data/1/bone_index = 2
 joint_data/1/bone2d_node = NodePath("Chest/RShoulder/RArm")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = 79.99999
-joint_data/1/constraint_angle_max = 99.99999
-joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_angle_min = -252.09598
+joint_data/1/constraint_angle_max = 284.99997
+joint_data/1/constraint_angle_invert = false
 joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
 joint_data/2/bone_index = 1
@@ -86,43 +86,42 @@ texture = ExtResource("1_4flbx")
 
 [node name="RArm" type="Sprite2D" parent="BodyParts"]
 position = Vector2(44, -82.725)
-rotation = -0.2504667
-scale = Vector2(0.9999971, 0.9999971)
+rotation = -0.00061154366
+scale = Vector2(0.99999696, 0.99999696)
 texture = ExtResource("2_onrkg")
 offset = Vector2(-0.45576477, 32.876614)
 
 [node name="RForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(58.479053, -23.42831)
-rotation = 1.1738776
-scale = Vector2(0.99983466, 0.99983466)
+position = Vector2(43.47179, -21.898115)
+rotation = 0.26179945
+scale = Vector2(0.9998352, 0.9998352)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.21077728, 29.462776)
 
 [node name="RHand" type="Sprite2D" parent="BodyParts"]
-position = Vector2(9.324772e-06, -1.0199238e-05)
-rotation = -1.967715
-scale = Vector2(1.4997511, 1.4997511)
+position = Vector2(26.18561, 38.71135)
+rotation = -2.8797932
+scale = Vector2(1.4997412, 1.4997412)
 texture = ExtResource("3_i3pqv")
 offset = Vector2(-0.77199936, -6.6032944)
 
 [node name="LArm" type="Sprite2D" parent="BodyParts"]
 position = Vector2(-44, -78)
-rotation = -2.87668
-scale = Vector2(0.99999917, 0.99999917)
+rotation = 0.17392112
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.29397583, -27.19541)
 
 [node name="LForearm" type="Sprite2D" parent="BodyParts"]
-position = Vector2(-58.476807, -23.918467)
-rotation = -1.1984596
-scale = Vector2(0.99987996, 0.99987996)
+position = Vector2(-34.723164, -133.39943)
+rotation = -0.349066
+scale = Vector2(0.9998796, 0.9998796)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0.08850098, 29.423607)
 
 [node name="LHand" type="Sprite2D" parent="BodyParts"]
-position = Vector2(-2.1826394e-05, -1.1401209e-05)
-rotation = 1.9431331
-scale = Vector2(1.4998089, 1.4998089)
+position = Vector2(-14.062652, -73.69342)
+rotation = 2.7925267
+scale = Vector2(1.4998167, 1.4998167)
 texture = ExtResource("3_i3pqv")
 
 [node name="Skeletron" type="Node2D" parent="."]
@@ -148,7 +147,7 @@ remote_path = NodePath("../../../../../BodyParts/RArm")
 [node name="RArm" type="Bone2D" parent="Skeletron/Skeleton2D/Chest/RShoulder"]
 position = Vector2(61.035683, 0.6325226)
 rotation = -1.5762933
-scale = Vector2(0.9998367, 0.9998367)
+scale = Vector2(0.99983674, 0.99983674)
 rest = Transform2D(0.99987024, -0.016110145, 0.016110145, 0.99987024, 60.999683, -1.0192719)
 metadata/_local_pose_override_enabled_ = true
 

@@ -6,4 +6,4 @@
 
 [node name="player" parent="." instance=ExtResource("1_3dogw")]
 position = Vector2(541, 351)
-rotation = 1.1065388
+rotation = 0.101229094
